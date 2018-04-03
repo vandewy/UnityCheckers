@@ -6,6 +6,7 @@ public class Move_Chip : MonoBehaviour {
 
     public bool over_square;
     public string square_touching_name;
+    public GameObject origin;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +24,15 @@ public class Move_Chip : MonoBehaviour {
         if(over_square == true)
         {
             GameObject square = GameObject.Find(square_touching_name);
-            gameObject.transform.position = new Vector3(square.transform.position.x + 2f, square.transform.position.y - .5f, square.transform.position.z);
+            if (square.GetComponent<Square_Script>().occupied == false)
+            {
+                gameObject.transform.position = new Vector3(square.transform.position.x + 2f, square.transform.position.y - .5f, square.transform.position.z);
+                origin = square;
+                //square.GetComponent<Square_Script>().occupied = true;
+            }else
+            {
+                gameObject.transform.position = new Vector3(origin.transform.position.x + 2f, origin.transform.position.y - .5f, origin.transform.position.z);
+            }
         }
     }
 

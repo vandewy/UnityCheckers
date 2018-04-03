@@ -16,7 +16,13 @@ public class Seed_Script : MonoBehaviour {
             red_chip = "RedChip" + i.ToString();
             square = "Square" + i.ToString();
             GameObject.Find(red_chip).GetComponent<Move_Chip>().square_touching_name = square;
+            GameObject.Find(red_chip).GetComponent<Move_Chip>().origin = GameObject.Find(square);
             GameObject.Find(square).GetComponent<Square_Script>().occupied = true;
+        }
+        for(int i = 3; i < 9; i++)
+        {
+            square = "Square" + i.ToString();
+            GameObject.Find(square).GetComponent<Square_Script>().occupied = false;
         }
 		
 	}
