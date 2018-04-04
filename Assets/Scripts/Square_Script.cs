@@ -5,6 +5,8 @@ using UnityEngine;
 public class Square_Script : MonoBehaviour {
 
     public bool occupied;
+    public int square_number;
+    public int row_number;
 
 	// Use this for initialization
 	void Start () {

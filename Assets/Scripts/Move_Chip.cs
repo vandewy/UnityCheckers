@@ -24,20 +24,36 @@ public class Move_Chip : MonoBehaviour {
         if(over_square == true)
         {
             GameObject square = GameObject.Find(square_touching_name);
-            if (square.GetComponent<Square_Script>().occupied == false)
-            {
-                gameObject.transform.position = new Vector3(square.transform.position.x + 2f, square.transform.position.y - .5f, square.transform.position.z);
+            int modulo_check = origin.GetComponent<Square_Script>().row_number;
+            if (modulo_check % 2 == 0)
+                modulo_check = 1;
+            else
+                modulo_check = 0;
+
+
+            if (square.GetComponent<Square_Script>().occupied == false && square.GetComponent<Square_Script>().square_number > 
+                origin.GetComponent<Square_Script>().square_number)
+                {
+                gameObject.transform.position = new Vector3(square.transform.position.x + 1.8f, square.transform.position.y - .5f, -1f);
+                origin.GetComponent<Square_Script>().occupied = false;
                 origin = square;
+                origin.GetComponent<Square_Script>().occupied = true;
                 //square.GetComponent<Square_Script>().occupied = true;
             }else
             {
-                gameObject.transform.position = new Vector3(origin.transform.position.x + 2f, origin.transform.position.y - .5f, origin.transform.position.z);
+                //return to original position
+                gameObject.transform.position = new Vector3(origin.transform.position.x + 2f, origin.transform.position.y - .5f, -1f);
             }
+        }else
+        {
+            //return to original postion
+            gameObject.transform.position = new Vector3(origin.transform.position.x + 2f, origin.transform.position.y - .5f, -1f);
         }
     }
 
     void OnMouseDown()
     {
+        print("mouse down");
         gameObject.transform.localScale += new Vector3(0.04f, 0.04f);
     }
 
