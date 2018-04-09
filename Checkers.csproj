@@ -310,6 +310,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Move_Chip.cs" />
+    <Compile Include="Assets\Scripts\Rule_Enforcer.cs" />
     <Compile Include="Assets\Scripts\Seed_Script.cs" />
     <Compile Include="Assets\Scripts\Square_Script.cs" />
   </ItemGroup>

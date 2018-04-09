@@ -7,10 +7,14 @@ public class Move_Chip : MonoBehaviour {
     public bool over_square;
     public string square_touching_name;
     public GameObject origin;
+    private Rule_Enforcer enforce;
 
-	// Use this for initialization
-	void Start () {
-        over_square = true;		
+    // Use this for initialization
+    void Start () {
+        over_square = true;
+        enforce = GetComponent<Rule_Enforcer>();
+        
+
 	}
 	
 	// Update is called once per frame
