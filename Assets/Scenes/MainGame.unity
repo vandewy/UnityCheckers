@@ -958,6 +958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &747308304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1132,6 +1134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &766167634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1225,6 +1229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1002492470
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1318,6 +1324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1008616457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1411,6 +1419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1028943609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1504,6 +1514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1079550309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1795,6 +1807,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1174482126
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1888,6 +1902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1193087350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1981,6 +1997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1244263107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2173,6 +2191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1342116236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2266,6 +2286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1374388702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2404,6 +2426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1418999959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2522,6 +2546,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!1 &1485998407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,6 +2715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1612422377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2782,6 +2810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1640652263
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2974,6 +3004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1844625829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3166,6 +3198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1897430846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3202,6 +3236,7 @@ GameObject:
   - component: {fileID: 1920655474}
   - component: {fileID: 1920655473}
   - component: {fileID: 1920655472}
+  - component: {fileID: 1920655476}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3285,6 +3320,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1920655476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1920655471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5127d0941870d74dbfa677aec8cf69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1932935637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,6 +3399,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1932935641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3446,6 +3494,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &1933526978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3622,6 +3672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupied: 0
+  square_number: 0
+  row_number: 0
 --- !u!61 &2138210816
 BoxCollider2D:
   m_ObjectHideFlags: 0
