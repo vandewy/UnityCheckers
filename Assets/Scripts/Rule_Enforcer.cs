@@ -14,19 +14,46 @@ public class Rule_Enforcer : MonoBehaviour {
 
 		int right_edge = 4;
 		int left_edge = 5;
+        int row = 1; //if row is one then non-edge squares can move +4 or +5
+        //if row is 0 then non-edge squares can move +3 or +5, alternates 1,0,1,0,1,0,1,0 for entire board
 		//dictionary used to fill moves[,] with valid moves
+        //Every 4th square row variable is changed for current movements
 		dict_moves = new Dictionary<int, List<int>> ();
 
 		for (int i = 1; i < 29; i++) {
 			if (i == right_edge) {
 				dict_moves.Add (i, new List<int> { i + 4, 0});
-				right_edge += 4;
-			} else if (i == left_edge) {
+				right_edge += 8;
+                if (i % 4 == 0 || i == 4)
+                {
+                    if (row == 1)
+                        row = 0;
+                    else if (row == 0)
+                        row = 1;
+                }
+            } else if (i == left_edge) {
 				dict_moves.Add (i, new List<int> { i + 4, 0});
-				left_edge += 4;
-			} else {
+				left_edge += 8;
+                if (i % 4 == 0 || i == 4)
+                {
+                    if (row == 1)
+                        row = 0;
+                    else if (row == 0)
+                        row = 1;
+                }
+            } else if(row == 1) {
 				dict_moves.Add (i, new List<int> { i + 4, i + 5 });
-			}
+                if(i % 4 == 0 || i == 4)
+                {
+                    row = 0;
+                }
+			}else if(row == 0) {
+                dict_moves.Add(i, new List<int> { i + 3, i + 4 });
+                if(i % 4 == 0)
+                {
+                    row = 1;
+                }
+            }
 		}
 			
 		int x = 1;

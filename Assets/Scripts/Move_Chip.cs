@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Move_Chip : MonoBehaviour {
 
     public bool over_square;
@@ -12,7 +13,7 @@ public class Move_Chip : MonoBehaviour {
     // Use this for initialization
     void Start () {
         over_square = true;
-        enforce = GetComponent<Rule_Enforcer>();
+        enforce = GameObject.Find("Canvas").GetComponent<Rule_Enforcer>();
         
 
 	}
@@ -35,8 +36,7 @@ public class Move_Chip : MonoBehaviour {
                 modulo_check = 0;
 
 
-            if (square.GetComponent<Square_Script>().occupied == false && square.GetComponent<Square_Script>().square_number > 
-                origin.GetComponent<Square_Script>().square_number)
+            if (square.GetComponent<Square_Script>().occupied == false && Legal_Move(square) == true)
                 {
                 gameObject.transform.position = new Vector3(square.transform.position.x + 1.8f, square.transform.position.y - .5f, -1f);
                 origin.GetComponent<Square_Script>().occupied = false;
@@ -53,6 +53,19 @@ public class Move_Chip : MonoBehaviour {
             //return to original postion
             gameObject.transform.position = new Vector3(origin.transform.position.x + 2f, origin.transform.position.y - .5f, -1f);
         }
+    }
+
+    private bool Legal_Move(GameObject dest_sq)
+    {
+        int chip_dest = dest_sq.GetComponent<Square_Script>().square_number;
+        int chip_origin = origin.GetComponent<Square_Script>().square_number;
+        print(chip_origin + ":" + chip_dest + "     " + enforce.moves[chip_origin, chip_dest]);
+        if (enforce.moves[chip_origin, chip_dest] == 1)
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
     void OnMouseDown()
