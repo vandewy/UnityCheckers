@@ -59,7 +59,6 @@ public class Move_Chip : MonoBehaviour {
     {
         int chip_dest = dest_sq.GetComponent<Square_Script>().square_number;
         int chip_origin = origin.GetComponent<Square_Script>().square_number;
-        print(chip_origin + ":" + chip_dest + "     " + enforce.moves[chip_origin, chip_dest]);
         if (enforce.moves[chip_origin, chip_dest] == 1)
         {
             return true;

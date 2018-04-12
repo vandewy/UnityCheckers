@@ -127,5 +127,21 @@ public class Rule_Enforcer : MonoBehaviour {
 				moves [dict_moves [item.Key] [1], item.Key] = 1;
 			}
 		}
+
+        //build legal jump moves matrix
+        foreach(var item in dict_jump_moves)
+        {
+            if(item.Value[1] == 0)
+            {
+                jump_moves[item.Key, dict_jump_moves[item.Key][0]] = 1;
+                jump_moves[dict_jump_moves[item.Key][0], item.Key] = 1;
+            }else if(item.Value[1] > 0)
+            {
+                jump_moves[item.Key, dict_jump_moves[item.Key][0]] = 1;
+                jump_moves[dict_jump_moves[item.Key][0], item.Key] = 1;
+                jump_moves[item.Key, dict_jump_moves[item.Key][1]] = 1;
+                jump_moves[dict_jump_moves[item.Key][1], item.Key] = 1;
+            }
+        }
 	}
 }
